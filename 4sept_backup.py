@@ -268,7 +268,7 @@ print(l2)
 # index pos :  l to  r   
 # neg : r to  l 
 
-n=int(input("enter the number you want  store in list   : "))
+"""n=int(input("enter the number you want  store in list   : "))
 l1=[] 
 
 for i in range(n):
@@ -279,3 +279,4 @@ print(l1) # [1,1,3,3,4,5,7,8,8,9]
 l2=sorted(l1)
 print(l2)
 print("second  largest element  : ",l2[-2])
+"""
