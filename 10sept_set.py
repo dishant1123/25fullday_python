@@ -166,6 +166,7 @@ x()
 """
 
 # global variable :
+"""
 y=0
 x=100 
 def a():
@@ -178,3 +179,4 @@ a()
 # print(x)
 print("harshil")
 print(y)
+"""
