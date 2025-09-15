@@ -114,3 +114,17 @@ def main() :
     6. logout/ exit 
     7. back  to  bank 
 """
+"""
+HW : 
+    VEHICLE MANAGEMENT SYSTEM
+
+1. add == > create a vehicle 
+2. delete == > delete a vehicle
+3. update == > update a vehicle
+4. search == > search a vehicle
+5. display == > display all the vehicles
+6. exit == > exit the program
+
+use list  ==> []
+menu driven :  
+"""
