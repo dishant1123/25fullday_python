@@ -98,7 +98,9 @@ output : ["php","maam"]
 """
 #map : new list 
 
+"""
 l1=[12,2,3,45,5,6,7,8,9]
 
 a =list(map(lambda x :x **2 ,l1)) 
 print(a)
+"""
