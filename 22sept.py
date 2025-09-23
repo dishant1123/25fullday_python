@@ -70,3 +70,48 @@ print(x)
 """
 
 # birth date  ==>  age  calculate   
+
+"""x = 2
+for i in range(x):  # 0 1    == >stat  stop  step 
+    x += 2   # x -=2   # x = 0 -2  
+    print (x)  # 0 
+"""
+
+"""n=10 
+for i in range(n):
+    print(i)
+"""
+
+"""var = 10      # 10 
+for i in range(5): # 0 ,5   == > 4      
+    for j in range(2, 3, 1):  # 2 ,3 
+        if var%2 == 0:    # 15 % 2 ==0
+              break
+        var += 1   # var =18   
+    var+=1   # var =19    
+else:
+     var+=1    # var =20 
+print(var)
+# saumya   harshil 21 purva 22 vidhi 11  remo 20   het 10  shalin 11
+"""
+
+"""A=0
+for i in range(4):  # 3  ,4 
+    if i%2==0:   #  3 % 2==0 
+        pass 
+    else:
+        continue
+        break
+    A+=1  # 2 
+print(A)"""
+# saumya 9  harshil 2  purva 2  vidhi 5   remo 2   het 2   shalin 2 
+
+"""
+count = 0
+while(True):
+   if count % 3 == 0:
+       print(count, end = " ")
+   if(count > 15):
+       break
+   count += 1
+"""
