@@ -181,11 +181,11 @@ print("harshil")
 print(y)
 """
 
-from mypackage import calculator as c ,saumya
+"""from mypackage import calculator as c ,saumya
 
 print(c.sum(12,13))
 print(c.mul(12,14))
 
 saumya.s()
 
-
+"""
