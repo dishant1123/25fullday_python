@@ -66,3 +66,37 @@ input :  my name is ketan.
 consonant.txt :my nm s ktn. 
 vowel.txt :  ae i e a 
 """
+
+# with open("consonant.txt","w") as file:
+    # with  open("vowel.txt","w") as file1:
+"""n=input("enter the string : ")
+print(n)
+for i in n : 
+    if i in "aeiouAEIOU":
+        with open("vowel2.txt","a") as file:
+            file.write(i)
+    else :
+        with open("consonant2.txt","a") as file:
+            file.write(i)
+        
+"""
+# task  :2 
+"""
+bal =25000 
+1. deposit   ==>10000 
+2. withdraw  ==> 15000 
+3. check _balance
+
+passbook.txt 
+                        STATE BANK OF INDIA 
+                                                ACC.NO :729212390003
+DATE : 24-9-2025                                ACC.NAME :HARSHIL THAKKAR 
+BRANCH : AHMEDABAD                              PAN :AWKPS3297A 
+
+DATE/TIME            AMOUNT           DR          CR          BALANCE 
+
+24-9-2025                                                     25000 
+24-9-2025            10000                       10000        35000 
+24-9-2025            15000           15000                    20000
+"""
+
