@@ -97,7 +97,7 @@ e.show()
 
     def display(self):
         self.__show()
-        __name="two wheeler"
+        __name="two wheeler"  # no  poss.
         __model="s22"
         print("vehicle name is  :",self.__name)
         print("vehicle model is  :",self.__model)
@@ -107,10 +107,11 @@ v.display()
 # bank  : 
 
 class bank : 
+    
     acc_holder_name="saumya"
     acc_number =7201345780 
     balance =90000  
-    
+
     def depsoit(self,amt):
         self.balance +=amt 
         print("deposited amount is  :",amt)
@@ -139,4 +140,22 @@ b.check_balance()
 # task :  1 
 """
 generate  pin  : 
+"""
+
+# task  :2 
+
+"""
+def login (self,username ,password) : 
+
+b=bank() 
+username 
+password 
+
+b.login(username,password)
+    print("1. deposit")
+    print("2. withdraw")
+    print("3. check balance")
+    print("4. exit")
+    
+
 """
