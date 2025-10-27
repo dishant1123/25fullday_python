@@ -40,7 +40,7 @@ class c (a)
 class d(a): 
 """
 
-class vehicle : 
+"""class vehicle : 
     def __init__(self):  # name  model year ==> private 
         self.__name ="honda"
         self.__model="civic"  # non parameterized constructor
@@ -77,3 +77,53 @@ c.show()
 
 c1=car1(5)
 c1.display1()
+"""
+
+# hybrid level  of inheritance  : 
+"""
+it is  combination of  two or more inheritance ex : multiple  , multi level 
+"""
+class a : 
+    def __init__(self):
+        print("constructor  of A (non parameterized)")
+        self.a_data="data from A class "
+    
+    def showA(self):
+        print("class A method :",self.a_data)
+
+class b (a) : 
+    def __init__(self,b_data):
+        super().__init__()  # call the base class constructor
+        print("constructor  of B (parameterized)")
+        self.b_data=b_data
+        
+    def showB(self):
+        print("class B method :",self.b_data)
+
+class c : 
+    def __init__(self,c_data):
+        print("constructor  of C (parameterized)")
+        self.c_data=c_data
+    
+    def showc(self):
+        print("class C method :",self.c_data)
+
+class d(b,c):
+    def __init__(self,b_value,c_value,d_value):
+        b.__init__(self,b_value)  # call the base class constructor
+        c.__init__(self,c_value) 
+        self.d_value=d_value
+        
+        print("constructor  of D (parameterized)")
+        
+    def showD(self):
+        print("class D method :",self.d_value)
+
+obj =d("value from B","value from C","value from D")
+print("all details of D class : ")
+
+
+obj.showA()
+obj.showB()
+obj.showc()
+obj.showD()
