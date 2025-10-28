@@ -63,11 +63,61 @@ class employee_management_system:
         
     def add_emp(self):
         print(":::::add emp :::::")
-        id =int(input("enter emp id : "))
+        emp_id =int(input("enter emp id : "))
         name =input("enter name : ")
         age=int(input("enter  age : "))
         gender=input("enter gender :")
         salary =int(input("enter salary : "))
         dept =input("enter dept : ")
-        emp =employess(name,age,gender,id,salary,dept)
+        emp =employess(name,age,gender,emp_id,salary,dept)
         self.emp_list.append(emp)
+        print("emp added successfully")
+    
+    def delete_emp(self):
+        print(":::::delete emp :::::")
+        emp_id=int(input("enter emp id : "))
+        for emp  in self.emp_list: 
+            if emp.emp_id==emp_id: 
+                self.emp_list.remove(emp)
+        print("emp deleted successfully")
+        
+    def display(self):
+        print(":::::display emp :::::")
+        if not self.emp_list:
+            print("emp list is empty")
+        else :
+            for emp in self.emp_list:
+                emp.show_employess()
+                print()
+
+def main():
+    e=employee_management_system()
+    while True :
+        print("1.add emp")
+        print("2.delete emp")
+        print("3.display emp")
+        print("4.show inheritance")
+        print("5.another inheritance")
+        print("6.exit")
+        choice =int(input("enter the choice : "))
+        if choice ==1 :
+            e.add_emp()
+        elif choice ==2 :
+            e.delete_emp()
+        elif choice ==3 :
+            e.display()
+        elif choice ==4 :
+            print("inheritance : single  multi ple  multi level")
+            m=manager("saumya",28,"male",1234,100000,"IT",10)
+            m.show_manager()
+        elif choice ==5 :
+            print("inheritance : single  multi ple  multi level")
+            i=intern("malika",21,"female",23,7000,"Research",12,"IT",6)
+            i.show_intern()
+        elif choice ==6 :
+            print("exit")
+            break 
+        else :
+            print("invalid choice")
+            
+main()
