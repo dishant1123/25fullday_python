@@ -16,7 +16,7 @@ class person :
 # hirechy  inheritance : multiple derived class inherit  from  same base class 
 class employess(person):
     def __init__(self, name, age, gender,emp_id,salary,dept):
-        super().__init__(name, age, gender)
+        person.__init__(self,name,age,gender)
         self.emp_id=emp_id
         self.salary =salary 
         self.dept=dept 
@@ -27,7 +27,7 @@ class employess(person):
 
 class student(person):
     def __init__(self, name, age, gender,rollno,course):
-        super().__init__(name, age, gender)
+        person.__init__(self,name,age,gender)
         self.rollno=rollno
         self.course=course
     
@@ -37,7 +37,7 @@ class student(person):
         
 class manager(employess):
     def __init__(self, name, age, gender, emp_id, salary, dept,size):
-        super().__init__(name, age, gender, emp_id, salary, dept)
+        employess.__init__(self,name, age, gender, emp_id, salary, dept)
         self.size=size
     
     def show_manager(self):
@@ -112,7 +112,7 @@ def main():
             m.show_manager()
         elif choice ==5 :
             print("inheritance : single  multi ple  multi level")
-            i=intern("malika",21,"female",23,7000,"Research",12,"IT",6)
+            i=intern("malika",21,"female",23,7000,12,"research","IT",6)
             i.show_intern()
         elif choice ==6 :
             print("exit")
