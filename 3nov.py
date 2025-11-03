@@ -23,7 +23,7 @@ print(c.sub(12,56))  # its is compulsory to pass 2 arg bcz no default arg set.
 
 # method  overriding  : 
 
-class animal : 
+"""class animal : 
     def sound(self):
         print("animal sound")
 
@@ -35,11 +35,56 @@ class cat(animal):
     def sound(self):
         print("cat sound")
         
-"""d=dog()
+d=dog()
 d.sound() 
-"""
+
+
 animal = [dog(), cat()]
 for i in animal :
     i.sound()
-
+"""
 # sound() ==> in subclass override the  parent class method  ==> this is called run time polymorphism. 
+
+# poly  + inheri + overloading  + riding  : 
+
+class bank : 
+    def __init__(self,name,balance =0):  # default arg  : balance  =0 
+        self.name =name  
+        self.balance =balance
+    
+    def deposit(self,amt=0,bonus=0):
+        self.balance += amt +bonus  # self.bal = self.bal +amt +bonus 
+        print(f'deposited {amt} + bonus :{bonus} = {amt +bonus}')
+        
+    def display(self):
+        print(f'name : {self.name} balance : {self.balance}')
+
+# base  class overriding  method 
+class savings(bank):
+    def __init__(self, name, balance=0,int_rate=5):
+        super().__init__(name, balance)
+        self.int_rate = int_rate
+        
+    def display(self):
+        print(f'savings account info  || balance : {self.balance} || interest_rate : {self.int_rate}')
+        
+class current(bank):
+    def __init__(self, name, balance=0,trasacation_limit=50000):
+        super().__init__(name, balance)
+        self.trasacation_limit = trasacation_limit
+    
+    def display(self):
+        print(f'current account info  || balance : {self.balance} || trasacation_limit : {self.trasacation_limit}')
+
+s1=savings("saumya",80000) 
+c1 =current("harshil",900000)
+
+# method  overloading  : (same funcation diff arg  )
+
+s1.deposit(10000)
+c1.deposit(50000,200) 
+
+# method  overriding  (same name  diff class behaviour )
+
+s1.display()
+c1.display()
