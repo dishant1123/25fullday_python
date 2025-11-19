@@ -88,3 +88,38 @@ Requirements:
    - _registration_number must be private and accessed only through getter/setter.
 
 """
+
+# class method : 
+
+"""
+@classmethod 
+"""
+
+"""class student :
+    school_name = "tulip international school"
+    
+    def __init__(self,name):
+        self.name =name 
+        
+    @classmethod 
+    def change_school(cls,new_school):
+        cls.school_name = new_school  # modifying the class variable 
+        
+s=student("harshil")
+print(s.school_name)
+student.change_school("hillwood ")
+print(s.school_name)
+"""
+
+# static method :
+
+class student : 
+    @staticmethod
+    def student_age(age):
+        if age < 18 :
+            print("student is under 18")
+        else :
+            print("student is over 18")
+            
+s=student()
+s.student_age(20)
