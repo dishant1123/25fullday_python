@@ -60,3 +60,43 @@ with  open("harshil.txt") as f :
 """
 
 # task  : 1 list   ==>  odd even  ==> txt file   ==> 
+
+"""
+1. r+ : read + write  
+2. w+ : read + write 
+3. a+ : append + write  + read 
+"""
+"""
+with  open("vidhi.txt","r+") as f :
+    f.write("shalin patel.")
+    f.seek(0)    # using seek  to  move  cursor  to  start  of  file
+    context = f.read()
+    print(context)
+    f.close()
+    
+#my best friend name is purva.
+"""
+
+# w+ : 
+
+"""
+with  open("vidhi.txt","w+") as f :
+    f.write("shalin patel.")
+    f.seek(0)    # using seek  to  move  cursor  to  start  of  file
+    context = f.read()
+    print(context)
+    f.close()
+"""
+
+# a+:
+
+with  open("harshil.txt","a+") as f :
+    
+    f.write("shalin patel.")
+    f.seek(0)    # using seek  to  move  cursor  to  start  of  file
+    
+    context = f.read()
+    print(context)
+    f.close()
+ 
+
