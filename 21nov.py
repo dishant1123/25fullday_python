@@ -74,7 +74,7 @@ with  open("vidhi.txt","r+") as f :
     print(context)
     f.close()
     
-#my best friend name is purva.
+#my best friend name is purva.   ==> saumya  patel    saumya
 """
 
 # w+ : 
