@@ -123,7 +123,7 @@ except :
 
 # all data read to binary file  : 
 
-try :
+"""try :
     with open("om_sarkar.dat","rb") as f :
         print("all records read successfully from file.")
         
@@ -136,3 +136,4 @@ try :
                 break
 except  Exception as e :
     print("error  occured  while  reading  data  from  file. ",e)
+"""
