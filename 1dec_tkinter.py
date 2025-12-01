@@ -35,10 +35,17 @@ class filemanager :
             f.write(student.display())
     
     @staticmethod 
-    def delete_student():
+    def delete_student(rollno):
+        data = filemanager.read_all()  #rollno  name age 
+        new_data=[] 
+        for  i in data : 
+            first_value = i.split(" ")[0]  # rollno 
+            if first_value !=rollno :
+                new_data.append(i)
+        filemanager.write_all(new_data)
     
     @staticmethod 
-    def search_student():
+    def search_student(rollno):
         
     
             
