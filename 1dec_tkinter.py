@@ -46,8 +46,26 @@ class filemanager :
     
     @staticmethod 
     def search_student(rollno):
+        data = filemanager.read_all()  #rollno  name age 
+        for  i in data : 
+            r,name,marks =i.strip().split(",")
+            if r== rollno :
+                return i 
+        return None 
         
-    
-            
+class student_GUI :
+    def __init__(self,root):
+        # self.root  = root , 
+        # self.root.title() , self.root.geometry()
 
- 
+        # tk.label ==>rollno , name  , marks 
+        
+        # entry  :  rollno name  marks 
+        
+        # button  : command ==>self.add_student()
+        """
+        4 . button  ==> add student , update student, delete student , search student 
+        """
+    
+    def add_student(self) : 
+        
