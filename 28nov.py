@@ -60,7 +60,7 @@ def calculator():
 tk.Button(root,text="calculate",font=("times",18),command=calculator).pack(pady=10)
 root.mainloop()\
 
-# task:1 modify 
+#task:1 modify 
 #task :2 reg forms   ::
 
 """

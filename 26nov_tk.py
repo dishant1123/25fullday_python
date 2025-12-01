@@ -16,7 +16,7 @@ name_box =tk.Entry(root,width=50).pack()
 root.mainloop()
 """
 
-root = tk.Tk()
+"""root = tk.Tk()
 root.title("print name")
 root.geometry("400x300")
 
@@ -37,5 +37,5 @@ btn = tk.Button(root,text="frist name",font=("times",18),command=print_name).pac
 
 root.mainloop()
 
-
+"""
 
