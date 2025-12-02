@@ -30,9 +30,9 @@ class filemanager :
             f.writelines(lines)
             # (["my name is saumya.\n","my age is 20.\n","study in royal"])
     @staticmethod 
-    def add_student():
+    def add_student(s):
         with  open(filemanager.FILE,"a") as f :
-            f.write(student.display())
+            f.write(s.display())
     
     @staticmethod 
     def delete_student(rollno):
@@ -49,7 +49,7 @@ class filemanager :
         data = filemanager.read_all()  #rollno  name age 
         for  i in data : 
             r,name,marks =i.strip().split(",")
-            if r== rollno :
+            if int(r)== int(rollno) :
                 return i 
         return None 
         
@@ -102,4 +102,69 @@ class student_GUI :
             self.clear_fields()
         except ValueError :
             messagebox.showerror("error","please enter valid input")
+
+    def update_student(self):
+        try:
+            rollno =int(self.roll_entry.get())
+            name=self.name_entry.get()
+            marks=int(self.marks_entry.get())
+            
+            s=student(rollno,name,marks)
+            if filemanager.search_student(rollno):
+                filemanager.update_student(s)
+                messagebox.showinfo("success","student updated successfully")
+            else :
+                messagebox.showerror("error","student not found")
+            self.clear_fields()
+        except ValueError :
+            messagebox.showerror("error","please enter valid input")
+            
+    def delete_student(self):
+        try: 
+            rollno =int(self.roll_entry.get())
+            if filemanager.search_student(rollno):
+                filemanager.delete_student(rollno)
+                messagebox.showinfo("success","student deleted successfully")
+            else :
+                messagebox.showerror("error","student not found")
+            self.clear_fields()
+        except ValueError :
+            messagebox.showerror("error","please enter valid input")
+            
+    def search_student(self):
+        try :
+            rollno =int(self.roll_entry.get())
+            result = filemanager.search_student(rollno)
+            
+            if result :
+                r,name ,marks =result.split(",")
+                messagebox.showinfo("student found",f"name : {name} marks : {marks}")
+            else :
+                messagebox.showerror("error","student not found")
+        except ValueError :
+            messagebox.showerror("error","please enter valid input")
+    
+    def view_students(self):
+        win = tk.Toplevel(self.root)
+        win.title("all students information display")
+        win.geometry("480x450")
+        tk_area = tk.Text(win, height=20, width=40)
+        tk_area.pack(fill=tk.BOTH,expand=True)
+        
+        data =filemanager.read_all()
+        if data :
+            for i in data :
+                tk_area.insert(tk.END,i)
+        else :
+            tk_area.insert(tk.END,"no student found")
+            
+    def clear_fields(self):
+        self.roll_entry.delete(0,tk.END)
+        self.name_entry.delete(0,tk.END)
+        self.marks_entry.delete(0,tk.END)
+
+root = tk.Tk()
+s=student_GUI(root)
+root.mainloop()
+            
     
