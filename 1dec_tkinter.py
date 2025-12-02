@@ -12,7 +12,7 @@ class student :
         self.marks=marks
     
     def display(self):
-        print(f"rollno :{self.rollno} name:{self.name} marks:{self.marks}")
+        return f"{self.rollno} ,{self.name},{self.marks}\n"
         
 class filemanager : 
     FILE ="25_fullday.txt"
@@ -24,6 +24,7 @@ class filemanager :
                 return f.readlines() 
         except FileNotFoundError:
             return [] 
+        
     @staticmethod 
     def write_all(lines):
         with open(filemanager.FILE,"w") as f :
@@ -39,8 +40,8 @@ class filemanager :
         data = filemanager.read_all()  #rollno  name age 
         new_data=[] 
         for  i in data : 
-            first_value = i.split(" ")[0]  # rollno 
-            if first_value !=rollno :
+            first_value = i.strip().split(" ")[0]  # rollno 
+            if int(first_value) !=int(rollno) :
                 new_data.append(i)
         filemanager.write_all(new_data)
     
@@ -52,6 +53,19 @@ class filemanager :
             if int(r)== int(rollno) :
                 return i 
         return None 
+    @staticmethod
+    def update_student(s):
+        data = filemanager.read_all()
+        updated = []
+
+        for line in data:
+            r = line.strip().split(",")[0]
+            if int(r) == s.rollno:
+                updated.append(s.display())   # Replace old data
+            else:
+                updated.append(line)
+
+        filemanager.write_all(updated)
         
 class student_GUI :
     def __init__(self,root):
@@ -92,11 +106,11 @@ class student_GUI :
     
     def add_student(self) : 
         try : 
-            rollno =int(self.roll_entry.get())
+            roll =int(self.roll_entry.get())
             name =self.name_entry.get()
             marks=int(self.marks_entry.get())
             
-            s=student(rollno,name,marks)
+            s=student(roll,name,marks)
             filemanager.add_student(s)
             messagebox.showinfo("success","student added successfully")
             self.clear_fields()
@@ -105,40 +119,38 @@ class student_GUI :
 
     def update_student(self):
         try:
-            rollno =int(self.roll_entry.get())
+            roll =int(self.roll_entry.get())
             name=self.name_entry.get()
             marks=int(self.marks_entry.get())
             
-            s=student(rollno,name,marks)
-            if filemanager.search_student(rollno):
+            if filemanager.search_student(roll):
+                s=student(roll,name,marks)
                 filemanager.update_student(s)
                 messagebox.showinfo("success","student updated successfully")
             else :
                 messagebox.showerror("error","student not found")
-            self.clear_fields()
         except ValueError :
             messagebox.showerror("error","please enter valid input")
             
     def delete_student(self):
         try: 
-            rollno =int(self.roll_entry.get())
-            if filemanager.search_student(rollno):
-                filemanager.delete_student(rollno)
+            roll =int(self.roll_entry.get())
+            if filemanager.search_student(roll):
+                filemanager.delete_student(roll)
                 messagebox.showinfo("success","student deleted successfully")
             else :
                 messagebox.showerror("error","student not found")
-            self.clear_fields()
         except ValueError :
             messagebox.showerror("error","please enter valid input")
             
     def search_student(self):
         try :
-            rollno =int(self.roll_entry.get())
-            result = filemanager.search_student(rollno)
+            roll=int(self.roll_entry.get())
+            result = filemanager.search_student(roll)
             
             if result :
-                r,name ,marks =result.split(",")
-                messagebox.showinfo("student found",f"name : {name} marks : {marks}")
+                r,name ,marks =result.strip().split(",")
+                messagebox.showinfo("student found",f"name : {name} marks : {marks}, rollno : {roll}")
             else :
                 messagebox.showerror("error","student not found")
         except ValueError :
