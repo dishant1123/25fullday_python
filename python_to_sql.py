@@ -25,13 +25,16 @@ conn =mysql.connector.connect(
     host="localhost",
     port=3306,
     user="root", 
-    password="root"
+    password="root",
+    database="employees"
 )
 
 cursor=conn.cursor()
 
-cursor.execute("CREATE DATABASE IF NOT EXISTS employees")
+# cursor.execute("CREATE DATABASE IF NOT EXISTS employees")
 
-print("database created successfully")
+cursor.execute("CREATE TABLE IF NOT EXISTS emp (id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(20), salary INT)")
+
+print("table created successfully")
 cursor.close()
 conn.close()
