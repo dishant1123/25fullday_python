@@ -40,8 +40,17 @@ cursor=conn.cursor()
 # cursor.execute("INSERT INTO emp (name, salary) VALUES ('Bob Johnson', 35000)")
 # cursor.execute("INSERT INTO emp (name, salary) VALUES ('ramesh', 45000)")
 
-cursor.execute("UPDATE emp SET salary = salary +10000 WHERE name = 'ramesh'")
-conn.commit()
-print("updated successfully")
+# cursor.execute("UPDATE emp SET salary = salary +10000 WHERE name = 'ramesh'")
+
+# cursor.execute("DELETE FROM emp WHERE name = 'Bob Johnson'")
+
+cursor.execute("SELECT * FROM emp")
+row =cursor.fetchall()
+
+for i in row :
+    print(i)
+
+# conn.commit()
+# print("deleted successfully")
 cursor.close()
 conn.close()
