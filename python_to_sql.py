@@ -33,8 +33,15 @@ cursor=conn.cursor()
 
 # cursor.execute("CREATE DATABASE IF NOT EXISTS employees")
 
-cursor.execute("CREATE TABLE IF NOT EXISTS emp (id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(20), salary INT)")
+# cursor.execute("CREATE TABLE IF NOT EXISTS emp (id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(20), salary INT)")
 
-print("table created successfully")
+# cursor.execute("INSERT INTO emp (name, salary) VALUES ('John Doe', 30000)")
+# cursor.execute("INSERT INTO emp (name, salary) VALUES ('Alice Smith', 25000)")
+# cursor.execute("INSERT INTO emp (name, salary) VALUES ('Bob Johnson', 35000)")
+# cursor.execute("INSERT INTO emp (name, salary) VALUES ('ramesh', 45000)")
+
+cursor.execute("UPDATE emp SET salary = salary +10000 WHERE name = 'ramesh'")
+conn.commit()
+print("updated successfully")
 cursor.close()
 conn.close()
