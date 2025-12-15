@@ -1,3 +1,4 @@
+date,steps,activity,calories,distance,sleep
 06-10-2017 5464 Neutral 181 5 Inactive
 07-10-2017 6041 Sad 197 8 Inactive
 08-10-2017 25 Sad 0 5 Inactive
