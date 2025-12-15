@@ -14,12 +14,12 @@ print(a)
 print(a)
 """
 
-b=np.genfromtxt('data3.txt',delimiter=",",dtype=str)
+# b=np.genfromtxt('data3.txt',delimiter=",",dtype=str)
 # print(b)
 # print(np.genfromtxt('data3.txt',delimiter=",",dtype=str,skip_header=1))
 # print(np.genfromtxt('data3.txt',delimiter=",",dtype=str,skip_footer=1))
 
-print(np.loadtxt('data1.txt',dtype=int,skiprows=1))
+# print(np.loadtxt('data1.txt',dtype=int,skiprows=1))
 
 
 # task  :1 
@@ -37,4 +37,18 @@ Example
 30% - Detractors
 nps = 60 - 30 = 30
 Therefore, usually nps above 70 is considered excellent.
+"""
+
+"""air = np.loadtxt("airbnb_large_dataset.txt",dtype=float,skiprows=1)
+print(air)
+
+total =len(air)
+print(total)
+
+"""
+
+# fitbit : 
+
+"""
+task  :1 Print number of days user was sedantary (< 5000 steps), low active (5000 to 7499 steps), somewhat active (7500 to 9999 steps) and active (10k to 12499 steps).
 """
