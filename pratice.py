@@ -1,20 +1,14 @@
 import tkinter as tk
 from tkinter import messagebox
-
-
 class Student:
     def __init__(self, roll, name, marks):
         self.roll = roll
         self.name = name
         self.marks = marks
-
     def to_string(self):
         return f"{self.roll},{self.name},{self.marks}\n"
-
-
 class FileManager:
     FILE = "students_db.txt"
-
     @staticmethod
     def read_all():
         try:
@@ -22,17 +16,14 @@ class FileManager:
                 return f.readlines()
         except FileNotFoundError:
             return []
-
     @staticmethod
     def write_all(lines):
         with open(FileManager.FILE, "w") as f:
             f.writelines(lines)
-
     @staticmethod
     def add_student(student):
         with open(FileManager.FILE, "a") as f:
             f.write(student.to_string())
-
     @staticmethod
     def search_student(roll):
         data = FileManager.read_all()
@@ -41,13 +32,15 @@ class FileManager:
             if r == str(roll):
                 return line
         return None
-
     @staticmethod
     def delete_student(roll):
         data = FileManager.read_all()
-        new_data = [line for line in data if line.split(",")[0] != str(roll)]
+        new_data =[]
+        for line in data:
+            first_value = line.split(",")[0]   # get roll number from line
+        if first_value != str(roll):       # keep only other roll numbers
+            new_data.append(line)        
         FileManager.write_all(new_data)
-
     @staticmethod
     def update_student(student):
         data = FileManager.read_all()
@@ -59,10 +52,7 @@ class FileManager:
             else:
                 new_data.append(line)
         FileManager.write_all(new_data)
-
-
 class StudentGUI:
-
     def __init__(self, root):
         self.root = root
         self.root.title("Student Management System with CRUD")

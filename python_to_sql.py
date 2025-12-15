@@ -19,7 +19,7 @@ insert row  :
 insert into table_name (name, salary) values ('name', 'salary');
 """
 
-import  mysql.connector 
+"""import  mysql.connector 
 
 conn =mysql.connector.connect(
     host="localhost",
@@ -30,7 +30,7 @@ conn =mysql.connector.connect(
 )
 
 cursor=conn.cursor()
-
+"""
 # cursor.execute("CREATE DATABASE IF NOT EXISTS employees")
 
 # cursor.execute("CREATE TABLE IF NOT EXISTS emp (id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(20), salary INT)")
@@ -44,7 +44,7 @@ cursor=conn.cursor()
 
 # cursor.execute("DELETE FROM emp WHERE name = 'Bob Johnson'")
 
-cursor.execute("SELECT * FROM emp")
+"""cursor.execute("SELECT * FROM emp")
 row =cursor.fetchall()
 
 for i in row :
@@ -54,3 +54,7 @@ for i in row :
 # print("deleted successfully")
 cursor.close()
 conn.close()
+"""
+
+
+
