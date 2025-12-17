@@ -52,3 +52,14 @@ print(total)
 """
 task  :1 Print number of days user was sedantary (< 5000 steps), low active (5000 to 7499 steps), somewhat active (7500 to 9999 steps) and active (10k to 12499 steps).
 """
+
+a=np.genfromtxt('fitbit.txt',dtype=str,skip_header=1)
+# print(a)
+
+dates=a[:,0]
+steps=a[:,1].astype(int)
+print(dates)
+print(steps)
+max_steps =dates[steps.argmax()]
+# print(max_steps)
+
