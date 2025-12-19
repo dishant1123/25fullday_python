@@ -51,6 +51,12 @@ print(t2[t2["age"].isin([19,25])])
 
 # task :1 where ==> select  * from employees where age >20 
 
-print(t2[t2["age"]>20])
+# print(t2[t2["age"]>20])
 
-# task :2 selct * from employees where name in ("om","purva")
+# task :2 selct * from employees where name in ("om","purva") 
+
+# task  :3 select * from employees where age >25 and salary >50000 
+# print(t2[(t2["age"]>=25) & (t2["salary"]>50000) ])
+
+#task :4 SELECT * FROM employee WHERE age = 19 OR age = 22;
+print(t2[(t2["age"]==19) | (t2["age"]==21)])
