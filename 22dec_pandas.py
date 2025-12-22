@@ -43,4 +43,14 @@ print(t2)
 
 # print(t2.query("salary >50000"))
 # print(t2.query("salary >25000 and name =='om'"))
-print(t2.query("name in ['om','purva']"))
+# print(t2.query("name in ['om','purva']"))
+ 
+# read csv file  ==> movies. csv  
+# 1 col drop . ==> movies.csv 
+
+# task :2  title  == Avatar 
+# task :3  vote_average  between 5 and  7   
+# task :4  year 2015 
+movies = pd.read_csv("movies.csv")
+# movies.drop(columns ="Unnamed: 0",inplace=True)
+print(movies)
