@@ -37,5 +37,31 @@ print(df)
 
 # fill missing value :
 
+"""
 df.fillna(value =0,inplace=True)
 print(df)
+"""
+
+# data type ==> string  ==> object  null   ==> data type  ==> int  ==> 0.0 
+
+"""for i in df.columns: 
+    if df[i].dtype == "object":
+        df[i]=df[i].fillna("null")
+    else :
+        df[i]=df[i].fillna(0.0)
+print(df)
+"""
+# df.apply() : 
+
+"""df2= pd.DataFrame({
+    "a":[10,20,30],
+    "b":[2,3,4]
+}
+    
+)
+print(df2)
+print(df2.apply(sum))
+"""
+df =df.apply(lambda x :x.fillna("null") if x.dtype =="object" else x.fillna(0.0))
+print(df)
+print(df.info())
