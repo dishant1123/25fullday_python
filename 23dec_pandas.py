@@ -65,3 +65,6 @@ print(df2.apply(sum))
 df =df.apply(lambda x :x.fillna("null") if x.dtype =="object" else x.fillna(0.0))
 print(df)
 print(df.info())
+
+
+#loc  iloc : ,reset index 
