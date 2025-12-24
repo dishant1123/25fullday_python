@@ -68,3 +68,13 @@ print(df.info())
 
 
 #loc  iloc : ,reset index 
+
+"""
+1.create dataframe 
+2.add new column 
+3.column name  ==> rename 
+4.drop  ===> column  
+5.where  ==> ex : salary   ==> between use  
+6.missing  value  find  and count 
+7.missing fill_value  
+"""
