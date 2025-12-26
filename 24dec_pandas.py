@@ -42,3 +42,7 @@ df= pd.read_csv("mckinsey.csv")
 
 # print(df.loc[df["year"]==2007])
 
+# year ==2002 
+# continent ==Asia
+# year ==2002  and  continent ==Asia
+# country ==india  and  life_exp >=30
