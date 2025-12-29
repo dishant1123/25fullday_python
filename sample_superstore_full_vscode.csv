@@ -1,0 +1,51 @@
+Order ID,Customer Name,Segment,Region,Category,Sales,Profit
+CA-2019-10001,Sneha Iyer,Home Office,Central,Furniture,440.0,132.62
+CA-2019-10002,Neha Mehta,Corporate,Central,Furniture,1019.4,406.42
+CA-2019-10003,Rahul Verma,Corporate,Central,Office Supplies,1047.59,3.81
+CA-2019-10004,Kunal Joshi,Consumer,East,Office Supplies,961.18,-49.46
+CA-2019-10005,Andrew Allen,Corporate,South,Furniture,88.14,438.89
+CA-2019-10006,Rahul Verma,Corporate,Central,Office Supplies,1026.13,194.67
+CA-2019-10007,Riya Patel,Home Office,South,Technology,1475.23,275.97
+CA-2019-10008,Neha Mehta,Consumer,East,Technology,927.3,-176.81
+CA-2019-10009,Neha Mehta,Home Office,West,Technology,1085.09,302.15
+CA-2019-10010,Andrew Allen,Home Office,East,Furniture,552.34,-29.37
+CA-2019-10011,Andrew Allen,Consumer,East,Technology,582.95,-180.81
+CA-2019-10012,Neha Mehta,Corporate,West,Furniture,1352.75,212.79
+CA-2019-10013,John Smith,Corporate,West,Furniture,515.08,285.28
+CA-2019-10014,Sneha Iyer,Consumer,West,Technology,30.4,238.93
+CA-2019-10015,Arjun Malhotra,Corporate,Central,Furniture,528.07,42.46
+CA-2019-10016,Priya Desai,Home Office,East,Technology,726.03,-29.39
+CA-2019-10017,Amit Shah,Consumer,Central,Furniture,455.17,8.42
+CA-2019-10018,Sneha Iyer,Home Office,East,Office Supplies,875.22,476.55
+CA-2019-10019,Kunal Joshi,Home Office,East,Technology,1045.9,28.82
+CA-2019-10020,Arjun Malhotra,Corporate,East,Technology,850.99,385.76
+CA-2019-10021,Sneha Iyer,Corporate,East,Office Supplies,511.57,459.33
+CA-2019-10022,Andrew Allen,Consumer,South,Technology,1028.63,-127.61
+CA-2019-10023,Priya Desai,Home Office,West,Office Supplies,1041.43,-188.05
+CA-2019-10024,Rahul Verma,Consumer,East,Furniture,1228.24,18.05
+CA-2019-10025,Priya Desai,Corporate,West,Office Supplies,85.01,424.28
+CA-2019-10026,Andrew Allen,Consumer,South,Office Supplies,1135.01,-145.81
+CA-2019-10027,Andrew Allen,Consumer,South,Technology,1211.13,461.46
+CA-2019-10028,Neha Mehta,Home Office,East,Technology,1368.11,-0.82
+CA-2019-10029,Sneha Iyer,Home Office,East,Office Supplies,304.93,359.94
+CA-2019-10030,Priya Desai,Consumer,Central,Office Supplies,1068.3,341.4
+CA-2019-10031,Kunal Joshi,Home Office,West,Technology,1387.0,-112.03
+CA-2019-10032,Rahul Verma,Corporate,West,Office Supplies,785.03,173.45
+CA-2019-10033,Arjun Malhotra,Corporate,West,Furniture,304.58,-55.17
+CA-2019-10034,Rahul Verma,Consumer,West,Furniture,344.51,327.37
+CA-2019-10035,Amit Shah,Consumer,East,Office Supplies,1001.34,244.09
+CA-2019-10036,Sneha Iyer,Home Office,West,Technology,286.69,-120.22
+CA-2019-10037,Amit Shah,Consumer,South,Furniture,1366.96,375.47
+CA-2019-10038,John Smith,Home Office,West,Office Supplies,325.94,353.08
+CA-2019-10039,Amit Shah,Consumer,West,Office Supplies,305.26,-98.71
+CA-2019-10040,Kunal Joshi,Consumer,South,Office Supplies,335.29,-47.59
+CA-2019-10041,Neha Mehta,Home Office,Central,Furniture,709.84,118.18
+CA-2019-10042,Rahul Verma,Home Office,Central,Furniture,1270.95,388.36
+CA-2019-10043,Andrew Allen,Corporate,Central,Technology,1478.08,363.74
+CA-2019-10044,Kunal Joshi,Corporate,South,Office Supplies,837.83,415.23
+CA-2019-10045,John Smith,Home Office,South,Furniture,719.86,295.26
+CA-2019-10046,Kunal Joshi,Home Office,East,Technology,842.2,492.15
+CA-2019-10047,John Smith,Consumer,South,Technology,81.74,47.01
+CA-2019-10048,Neha Mehta,Corporate,Central,Technology,716.28,79.19
+CA-2019-10049,Andrew Allen,Consumer,South,Furniture,1052.0,410.77
+CA-2019-10050,Priya Desai,Home Office,West,Technology,1085.22,483.29
