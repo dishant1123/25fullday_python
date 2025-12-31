@@ -39,3 +39,11 @@ print(df.nlargest(3,"marks"))
 
 # random 5 sample  : 
 print(df.sample(3))
+
+import numpy as np
+a=np.array([1,2,3,4,5,6,7,8,9,10])
+print(np.average(a))
+
+
+a=np.ones(4).reshape(2,2)
+print(a)
