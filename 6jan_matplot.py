@@ -82,7 +82,7 @@ directors=directors.drop(columns=['Unnamed: 0'])
 # analysis 1 : year  wise  movies ==> line graph  
 # analysis 2 :   top 10 directors rating (vote_average) wise  movies ==> bar graph
 # analysis 3 :  scatter graph
-
+# analysis 4 : gender  distribution  using pie chart . 
 """
 year   movie_count
 1970     4 
@@ -94,3 +94,5 @@ plt.title('movies count')
 plt.xlabel('year')
 plt.ylabel('movie count')
 plt.show()
+
+
