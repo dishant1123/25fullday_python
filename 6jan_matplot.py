@@ -76,11 +76,21 @@ directors =pd.read_csv('directors.csv')
 movies=movies.drop(columns=['Unnamed: 0'])
 directors=directors.drop(columns=['Unnamed: 0'])
 
-print(movies.head())
-print(directors.head())
+# print(movies.head())
+# print(directors.head())
 
 # analysis 1 : year  wise  movies ==> line graph  
 # analysis 2 :   top 10 directors rating (vote_average) wise  movies ==> bar graph
 # analysis 3 :  scatter graph
 
-
+"""
+year   movie_count
+1970     4 
+"""
+# analysis : 
+movie_count = movies.groupby('year').size()
+plt.plot(movie_count,marker='o',color='red')
+plt.title('movies count')
+plt.xlabel('year')
+plt.ylabel('movie count')
+plt.show()
