@@ -70,12 +70,12 @@ plt.show()
 
 # movies , directors : 
 
-movies =pd.read_csv('movies.csv')
+"""movies =pd.read_csv('movies.csv')
 directors =pd.read_csv('directors.csv')
 
 movies=movies.drop(columns=['Unnamed: 0'])
 directors=directors.drop(columns=['Unnamed: 0'])
-
+"""
 # print(movies.head())
 # print(directors.head())
 
@@ -88,11 +88,62 @@ year   movie_count
 1970     4 
 """
 # analysis : 
-movie_count = movies.groupby('year').size()
+"""movie_count = movies.groupby('year').size()
 plt.plot(movie_count,marker='o',color='red')
 plt.title('movies count')
 plt.xlabel('year')
 plt.ylabel('movie count')
 plt.show()
+"""
 
+# 7 jan  : 
+movies =pd.read_csv('movies.csv')
+directors =pd.read_csv('directors.csv')
 
+movies=movies.drop(columns=['Unnamed: 0'])
+directors=directors.drop(columns=['Unnamed: 0'])
+
+df = pd.merge(
+    movies,
+    directors,
+    left_on="director_id",
+    right_on="id",
+    how="left"
+)
+# print(df)
+# scatter plot  : 
+
+"""plt.figure()
+plt.scatter(movies["budget"],movies["revenue"],color='red')
+plt.xlabel('budget')
+plt.ylabel('revenue')
+plt.title('scatter plot')
+plt.show()
+"""
+#average rating per director  : 
+
+"""avg_rating_directors= df.groupby("director_name")["vote_average"].mean().sort_values(ascending=False).head(10)
+# print(avg_rating_directors)
+
+plt.figure()
+avg_rating_directors.plot(kind="bar",color="green")
+plt.title("Average Rating Directors")
+plt.xlabel("Directors")
+plt.ylabel("Average Rating")
+plt.show()
+"""
+
+#top  director by movie count : 
+
+"""director_count = df["director_name"].value_counts().head(10)
+print(director_count)
+
+plt.figure()
+director_count.plot(kind="barh",color="green")
+plt.title("Top Director by Movie Count")
+plt.xlabel("Movie Count")
+plt.ylabel("Directors")
+plt.show()
+"""
+
+# which gender has higher / lower rating . 
