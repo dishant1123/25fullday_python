@@ -147,3 +147,31 @@ plt.show()
 """
 
 # which gender has higher / lower rating . 
+
+# multiple line graph ==> budget and revenue trend  
+
+"""year_data =df.groupby("year")[["budget","revenue"]].mean()
+
+plt.figure()
+plt.plot(year_data.index,year_data["budget"],color="red")
+plt.plot(year_data.index,year_data["revenue"],color="blue")
+plt.title("Budget and Revenue")
+plt.xlabel("Year")
+plt.ylabel("Amount")
+plt.legend(["Budget","Revenue"])
+plt.show()
+"""
+
+# using titanic  dataset : 
+
+# analysis 1 : survival count  
+# analysis 2 : survival count  by gender   ==> male  1  female 0 
+# analysis 3 : survival by passenger_class  ==> 1st class  3  2nd class  2  3rd class  1  crew  0 
+# analysis 4 : avg age male  or female   ==> age distribution  
+# analysis 5 : fare vs survival 
+# analysis 6 : age  bin  ==>10-20  20-30  30-40  ==>count  ==>survival vs age 
+# analysis 7 : survival analysis using embark 
+
+  
+
+
