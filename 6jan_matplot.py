@@ -211,9 +211,30 @@ plt.show()
 """
 #  analysis 2 : survival  by gender : 
 
-plt.figure()
+"""plt.figure()
 df.groupby("Sex")["Survived"].sum().plot(kind="bar",color="red")
 plt.xlabel("Sex")
 plt.ylabel("Survived")
 plt.title("Survived by Gender")
 plt.show()
+"""
+
+# analysis  :3 
+
+"""plt.figure()
+df.groupby("Pclass")["Survived"].sum().plot(kind="bar",color="red")
+plt.xlabel("Pclass")
+plt.ylabel("Survived")
+plt.title("Survived by Pclass")
+plt.show()
+"""
+
+# age  distribution  : 
+plt.figure()
+plt.hist(df["Age"],bins=20)
+plt.title("Age Distribution")
+plt.xlabel("Age")
+plt.ylabel("Frequency")
+plt.show()
+
+# task : 4 adult  age  > 18  , < 18 
