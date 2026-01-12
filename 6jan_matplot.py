@@ -97,7 +97,7 @@ plt.show()
 """
 
 # 7 jan  : 
-movies =pd.read_csv('movies.csv')
+"""movies =pd.read_csv('movies.csv')
 directors =pd.read_csv('directors.csv')
 
 movies=movies.drop(columns=['Unnamed: 0'])
@@ -110,6 +110,7 @@ df = pd.merge(
     right_on="id",
     how="left"
 )
+"""
 # print(df)
 # scatter plot  : 
 
@@ -172,6 +173,47 @@ plt.show()
 # analysis 6 : age  bin  ==>10-20  20-30  30-40  ==>count  ==>survival vs age 
 # analysis 7 : survival analysis using embark 
 
-  
+df = pd.read_csv("Titanic-Dataset.csv")
+# print(df)
+
+# print(df.info())  # prints the shape of the dataframe , number missing value 
+ 
+# ===== data cleaning  ======
+
+df["Age"] = df["Age"].fillna(df['Age'].mean())
+# print(df)
+# print(df.info())
+# print(df[['PassengerId','Age']].head(50))
+
+# embark :
+
+df['Embarked'] =df['Embarked'].fillna(df['Embarked'].mode()[0])
+# print(df[['PassengerId','Age','Embarked']].head(65))
 
 
+# drop  cabin  col  : 
+
+# print(df.columns)
+
+if 'Cabin' in df.columns:
+    df.drop(columns=['Cabin'],inplace=True) 
+# print(df)
+# print(df.info())
+
+# analysis 1 : survival count
+
+"""plt.figure() 
+df["Survived"].value_counts().plot(kind="bar",color="green")
+plt.xlabel("Survived")
+plt.ylabel("Count")
+plt.title("Survived Count")
+plt.show()
+"""
+#  analysis 2 : survival  by gender : 
+
+plt.figure()
+df.groupby("Sex")["Survived"].sum().plot(kind="bar",color="red")
+plt.xlabel("Sex")
+plt.ylabel("Survived")
+plt.title("Survived by Gender")
+plt.show()
