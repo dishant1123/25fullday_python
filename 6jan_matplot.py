@@ -2,6 +2,7 @@
 
 import matplotlib.pyplot as plt 
 import pandas as pd
+import seaborn as sns
 """
 plt.plot() ==> line graph 
 plt.scatter() ==> scatter graph
@@ -173,30 +174,30 @@ plt.show()
 # analysis 6 : age  bin  ==>10-20  20-30  30-40  ==>count  ==>survival vs age 
 # analysis 7 : survival analysis using embark 
 
-df = pd.read_csv("Titanic-Dataset.csv")
+# df = pd.read_csv("Titanic-Dataset.csv")
 # print(df)
 
 # print(df.info())  # prints the shape of the dataframe , number missing value 
  
 # ===== data cleaning  ======
 
-df["Age"] = df["Age"].fillna(df['Age'].mean())
+# df["Age"] = df["Age"].fillna(df['Age'].mean())
 # print(df)
 # print(df.info())
 # print(df[['PassengerId','Age']].head(50))
 
 # embark :
 
-df['Embarked'] =df['Embarked'].fillna(df['Embarked'].mode()[0])
+# df['Embarked'] =df['Embarked'].fillna(df['Embarked'].mode()[0])
 # print(df[['PassengerId','Age','Embarked']].head(65))
 
 
 # drop  cabin  col  : 
 
 # print(df.columns)
-
+"""
 if 'Cabin' in df.columns:
-    df.drop(columns=['Cabin'],inplace=True) 
+    df.drop(columns=['Cabin'],inplace=True) """
 # print(df)
 # print(df.info())
 
@@ -230,11 +231,106 @@ plt.show()
 """
 
 # age  distribution  : 
-plt.figure()
+"""plt.figure()
 plt.hist(df["Age"],bins=20)
 plt.title("Age Distribution")
 plt.xlabel("Age")
 plt.ylabel("Frequency")
 plt.show()
-
+"""
 # task : 4 adult  age  > 18  , < 18 
+
+
+# ============================================================================== 
+
+# seaborn :
+"""
+extention of  matplotlib . 
+provides beautiful statistical graphics and easy to use plots with very little code. 
+
+new : 
+
+1. co relation  , regression  , distribution  
+ ex.  dependent , independent  
+2. normal distribution : 
+  
+"""
+
+movies = pd.read_csv("movies.csv")
+directors = pd.read_csv("directors.csv")
+
+movies = movies.drop(columns=['Unnamed: 0']) 
+directors = directors.drop(columns=['Unnamed: 0'])
+
+# merged = movies.merge(
+#     directors,
+#     left_on="director_id",
+#     right_on="id",
+#     how="left"
+# )
+# print(movies.head())
+# print(directors.head())
+
+# pip install seaborn 
+
+"""
+sns.scatterplot(x="budget",y="revenue",data=movies)
+plt.title("Budget vs Revenue")
+plt.show()
+#  ===> insights :1. movies with higher budgets generally earn higher revenues .
+#   ===> 2. some outliners exist higher budget  but lowe revenue. 
+"""
+
+# popularity  vs  vote  avg : 
+
+"""
+sns.scatterplot(x="popularity",y="vote_average",data=movies)
+plt.title("Popularity vs Vote Average")
+plt.show()
+
+# insights  ==> popular movies usually have  rating  between 6- 8. 
+"""
+ 
+# avg rating by director gender : 
+
+"""merged = movies.merge(
+    directors,
+    left_on="director_id",
+    right_on="id",
+    how="left"
+)
+
+# print(merged.head())
+
+sns.barplot(x="gender",y="vote_average",data=merged)
+plt.title("Average Rating by Director Gender")
+plt.show()
+
+# insights  ==> avg  movies ratings by male and female  directos are almost similar. 
+"""
+
+# regression   analysis :
+"""
+it used to understand the relationship between two variables. 
+that is  independent variable  and dependent variable. and also predict their values. 
+
+
+regplot() 
+lmplot()
+"""
+
+# budget  vs  revenue  :
+"""
+sns.regplot(x="budget",y="revenue",data=movies)
+plt.title("Budget vs Revenue")
+plt.show()
+
+# insights  ==> regression  line slopes upward so  it positive  relationship between budget and revenue.  budget is strong predictor of revenue.
+"""
+
+# popularity  vs  vote avg  :
+
+sns.regplot(x="popularity",y="vote_average",data=movies)
+plt.title("Popularity vs Vote Average")
+plt.show()
+
